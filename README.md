@@ -32,7 +32,7 @@ This project implements the Caesar Cipher using Python. It demonstrates encrypti
 - Explain Caesar Cipher and demonstrate decryption.
 - Prepare the presentation slides and their design.
 
-### Member 3: Hanen Alajlan - Cryptanalysis
+### Member 3: Haneen Alauwaid - Cryptanalysis
 - Implement the known-plaintext attack using `K = (C - P) mod 26`.
 - Extract the encryption key from a plaintext–ciphertext pair.
 - Handle edge cases, including empty input and non-alphabetic characters.

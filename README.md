@@ -41,7 +41,7 @@ This project implements the Caesar Cipher using Python. It demonstrates encrypti
 - Explain and demonstrate the known-plaintext attack.
 - Prepare the Reflection Session content.
 
-### Member 4: الرائعة دانا — Testing & Results
+### Member 4: دانا — Testing & Results
 - Write and run test cases for encryption, decryption, and cryptanalysis.
 - Identify bugs and verify their fixes.
 - Confirm that all modules work correctly together.

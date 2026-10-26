@@ -13,7 +13,7 @@ This project implements the Caesar Cipher using Python. It demonstrates encrypti
 
 ## Team Members and Task Distribution
 
-### Member 1: لطيفة — Team Leader & Encryption
+### Member 1: Latifa Alkathiri - Main & Encryption
 - Implement the encryption function using `C = (P + K) mod 26`.
 - Develop the main menu and user interface.
 - Handle user input for plaintext and key.
@@ -23,7 +23,7 @@ This project implements the Caesar Cipher using Python. It demonstrates encrypti
 - Upload the final project to Blackboard.
 - Coordinate team meetings and deadlines.
 
-### Member 2: هنا — Decryption & Input Validation
+### Member 2: Hana Aldawoud — Decryption & Input Validation
 - Implement the decryption function using `P = (C - K) mod 26`.
 - Validate the encryption key (0–25).
 - Ensure that text input is not empty.
@@ -32,7 +32,7 @@ This project implements the Caesar Cipher using Python. It demonstrates encrypti
 - Explain Caesar Cipher and demonstrate decryption.
 - Prepare the presentation slides and their design.
 
-### Member 3: حنين — Cryptanalysis
+### Member 3: Hanen Alajlan - Cryptanalysis
 - Implement the known-plaintext attack using `K = (C - P) mod 26`.
 - Extract the encryption key from a plaintext–ciphertext pair.
 - Handle edge cases, including empty input and non-alphabetic characters.
@@ -41,7 +41,7 @@ This project implements the Caesar Cipher using Python. It demonstrates encrypti
 - Explain and demonstrate the known-plaintext attack.
 - Prepare the Reflection Session content.
 
-### Member 4: دانا — Testing & Results
+### Member 4: Dana AlQwaifel (Team Leader) - Testing & Results
 - Write and run test cases for encryption, decryption, and cryptanalysis.
 - Identify bugs and verify their fixes.
 - Confirm that all modules work correctly together.

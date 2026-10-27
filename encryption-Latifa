@@ -1,0 +1,25 @@
+# encryption
+# formula: C = (P + K) mod 26
+
+def encrypt(text, key):
+    # shift the key so it stays between 0 and 25
+    key = key % 26
+
+    result = ""
+
+    for ch in text:
+        if ch.isalpha() and ch.isascii():
+            # uppercase letters start from A, lowercase from a
+            if ch.isupper():
+                base = ord('A')
+            else:
+                base = ord('a')
+
+            # apply the caesar formula
+            new_pos = (ord(ch) - base + key) % 26
+            result = result + chr(base + new_pos)
+        else:
+            # spaces, numbers and punctuation stay the same
+            result = result + ch
+
+    return result

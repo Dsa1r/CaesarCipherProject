@@ -1,4 +1,7 @@
 import unittest
+from encryption import encrypt
+from decryption import decrypt
+from cryptanalysis import known_plaintext_attack
 
 class TestCaesarCipher(unittest.TestCase):
     # Regular encryption tests

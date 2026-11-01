@@ -1,34 +1,31 @@
-# encryption 
-# formula: C = (P + K) mod 26 
+def validate_key(key):
+    return isinstance(key, int) and 0 <= key < 26
 
- 
-def encrypt(text, key): 
-  
-    # validate inputs first 
-    if not validate_key(key): 
-        raise ValueError("Key must be an integer between 0 and 25.") 
+def validate_text(text):
+    return isinstance(text, str) and len(text) > 0
 
-    if not validate_text(text): 
-        raise ValueError("Text cannot be empty.") 
+def encrypt(plaintext, key):
+    # Validate inputs
+    if not validate_text(plaintext):
+        raise ValueError("Text cannot be empty.")
+    if not validate_key(key):
+        raise ValueError("Key must be between 0 and 25.")
 
-    result = "" 
-
-    for ch in text: 
-        if ch.isalpha() and ch.isascii(): 
-            # uppercase letters start from A, lowercase from a 
-
-            if ch.isupper(): 
-                base = ord('A') 
-
-            else: 
-                base = ord('a') 
-
-            # apply the caesar formula 
-            new_pos = (ord(ch) - base + key) % 26 
-            result = result + chr(base + new_pos) 
-
-        else: 
-            # spaces, numbers and punctuation stay the same 
-            result = result + ch 
-
-    return result
+    encrypted_chars = []
+    
+    for char in plaintext:
+        if 'A' <= char <= 'Z':
+            # Encrypt uppercase letters
+            base = ord('A')
+            new_char = chr((ord(char) - base + key) % 26 + base)
+            encrypted_chars.append(new_char)
+        elif 'a' <= char <= 'z':
+            # Encrypt lowercase letters
+            base = ord('a')
+            new_char = chr((ord(char) - base + key) % 26 + base)
+            encrypted_chars.append(new_char)
+        else:
+            # Leave spaces and punctuation unchanged
+            encrypted_chars.append(char)
+            
+    return "".join(encrypted_chars)

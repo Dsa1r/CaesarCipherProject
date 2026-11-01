@@ -1,4 +1,5 @@
 def known_plaintext_attack(plaintext, ciphertext):
+    # Basic input checks
     if not isinstance(plaintext, str) or not isinstance(ciphertext, str):
         raise ValueError("Inputs must be strings.")
 
@@ -18,6 +19,7 @@ def known_plaintext_attack(plaintext, ciphertext):
         if p_is_letter != c_is_letter:
             raise ValueError("Plaintext and ciphertext must align at each position.")
 
+        # Skip matching non-alphabetic characters (spaces, symbols)
         if not p_is_letter:
             if p_char != c_char:
                 raise ValueError("Non-alphabetic characters must match.")
@@ -25,9 +27,12 @@ def known_plaintext_attack(plaintext, ciphertext):
 
         p_value = ord(p_char.upper()) - ord('A')
         c_value = ord(c_char.upper()) - ord('A')
+        
+        # Calculate the shift key for the current letter pair
         key = (c_value - p_value) % 26
         matched_letters += 1
         
+        # Ensure all pairs point to the exact same key
         if extracted_key is None:
             extracted_key = key
         elif key != extracted_key:

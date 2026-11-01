@@ -1,17 +1,34 @@
-def encrypt(text, key):
-  if not isinstance(key, int) or isinstance(key, bool) or not 0 <= key <= 25:
-    raise ValueError("Key must be an integer between 0 and 25.")
-  if not isinstance(text, str) or not text.strip():
-    raise ValueError("Text cannot be empty.")
+# encryption 
+# formula: C = (P + K) mod 26 
 
-result = ""
+ 
+def encrypt(text, key): 
+  
+    # validate inputs first 
+    if not validate_key(key): 
+        raise ValueError("Key must be an integer between 0 and 25.") 
 
-for char in text:
-    if 'A' <= char <= 'Z':
-        result += chr((ord(char) - ord('A') + key) % 26 + ord('A'))
-    elif 'a' <= char <= 'z':
-        result += chr((ord(char) - ord('a') + key) % 26 + ord('a'))
-    else:
-        result += char
+    if not validate_text(text): 
+        raise ValueError("Text cannot be empty.") 
 
-return result
+    result = "" 
+
+    for ch in text: 
+        if ch.isalpha() and ch.isascii(): 
+            # uppercase letters start from A, lowercase from a 
+
+            if ch.isupper(): 
+                base = ord('A') 
+
+            else: 
+                base = ord('a') 
+
+            # apply the caesar formula 
+            new_pos = (ord(ch) - base + key) % 26 
+            result = result + chr(base + new_pos) 
+
+        else: 
+            # spaces, numbers and punctuation stay the same 
+            result = result + ch 
+
+    return result

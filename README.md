@@ -129,7 +129,7 @@ Extracted Key: 3
 ```
 
 ## Testing
-The program should be tested with:
+The program has tested with:
 - Valid and invalid keys.
 - Empty text input.
 - Letters near the end of the alphabet.
@@ -137,7 +137,7 @@ The program should be tested with:
 - Spaces and punctuation.
 - Integration of all modules.
 
-Actual test results should be recorded in the final report.
+
 
 ## Limitations
 The Caesar Cipher is a classical educational cipher and is not suitable for protecting sensitive information because it has a small key space and is vulnerable to brute-force attacks.
